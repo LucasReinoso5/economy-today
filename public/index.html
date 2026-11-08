@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Economy Today</title>
+  <meta name="description" content="Daily economic news, filterable by country.">
+  <meta name="theme-color" content="#0f3d2e">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Economy Today">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-row">
+      <h1>Economy <span>Today</span></h1>
+      <button id="refresh" class="icon-btn" aria-label="Refresh" title="Refresh">↻</button>
+    </div>
+    <input id="search" type="search" placeholder="Search: inflation, dollar, oil…" autocomplete="off" enterkeyhint="search">
+    <nav id="countries" class="chips" aria-label="Filter by country"></nav>
+    <div class="row-filters">
+      <label>Period
+        <select id="days">
+          <option value="1">Last 24 h</option>
+          <option value="3">3 days</option>
+          <option value="7">7 days</option>
+          <option value="0">All time</option>
+        </select>
+      </label>
+      <span id="meta" class="meta"></span>
+    </div>
+  </header>
+
+  <div id="demo-banner" class="banner" hidden>Showing sample data: could not connect to the news sources.</div>
+
+  <main id="list" aria-live="polite"></main>
+
+  <footer>Personal project, not affiliated with the outlets cited. Headlines link to the original source. Not financial advice.</footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

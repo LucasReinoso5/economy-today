@@ -1,0 +1,15 @@
+{
+  "articles": [
+    { "country": "ES", "source": "Sample", "title": "Sample: inflation eases in the latest monthly reading", "summary": "Sample story to show how the app looks when the news sources cannot be reached.", "link": "https://example.com/es-1", "date": "2026-11-08T08:00:00.000Z" },
+    { "country": "ES", "source": "Sample", "title": "Sample: Ibex 35 ends the week with slight gains", "summary": "Sample text.", "link": "https://example.com/es-2", "date": "2026-11-07T17:30:00.000Z" },
+    { "country": "AR", "source": "Sample", "title": "Sample: the dollar and reserves, what to watch this week", "summary": "Sample text.", "link": "https://example.com/ar-1", "date": "2026-11-08T09:10:00.000Z" },
+    { "country": "MX", "source": "Sample", "title": "Sample: the Mexican peso and remittances in the latest quarter", "summary": "Sample text.", "link": "https://example.com/mx-1", "date": "2026-11-07T12:00:00.000Z" },
+    { "country": "US", "source": "Sample", "title": "Sample: Fed officials weigh next steps on interest rates", "summary": "Sample text.", "link": "https://example.com/us-1", "date": "2026-11-08T07:45:00.000Z" },
+    { "country": "GB", "source": "Sample", "title": "Sample: UK inflation data in focus for the Bank of England", "summary": "Sample text.", "link": "https://example.com/gb-1", "date": "2026-11-07T10:20:00.000Z" },
+    { "country": "FR", "source": "Sample", "title": "Sample: French growth remains moderate", "summary": "Sample text.", "link": "https://example.com/fr-1", "date": "2026-11-06T09:00:00.000Z" },
+    { "country": "DE", "source": "Sample", "title": "Sample: German industrial output and export outlook", "summary": "Sample text.", "link": "https://example.com/de-1", "date": "2026-11-06T11:00:00.000Z" },
+    { "country": "CN", "source": "Sample", "title": "Sample: China's trade figures and the yuan", "summary": "Sample text.", "link": "https://example.com/cn-1", "date": "2026-11-07T03:00:00.000Z" },
+    { "country": "JP", "source": "Sample", "title": "Sample: Bank of Japan watches the yen and wages", "summary": "Sample text.", "link": "https://example.com/jp-1", "date": "2026-11-07T01:30:00.000Z" },
+    { "country": "WORLD", "source": "Sample", "title": "Sample: global markets mixed as oil prices swing", "summary": "Sample text.", "link": "https://example.com/world-1", "date": "2026-11-08T06:00:00.000Z" }
+  ]
+}
