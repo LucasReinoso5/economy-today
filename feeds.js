@@ -39,7 +39,6 @@ const FEEDS = [
   { country: 'JP', source: 'Japan Times Business', url: 'https://www.japantimes.co.jp/news_category/business/feed/' },
 
   { country: 'WORLD', source: 'The Guardian Business', url: 'https://www.theguardian.com/business/rss' },
-  { country: 'WORLD', source: 'Al Jazeera Economy', url: 'https://www.aljazeera.com/xml/rss/all.xml' },
 ];
 
 module.exports = { COUNTRIES, FEEDS };

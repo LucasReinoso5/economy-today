@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const { COUNTRIES, FEEDS } = require('./feeds');
 const { parseFeed } = require('./rss');
+const { isEconomicArticle } = require('./news-filter');
 
 const PORT = process.env.PORT || 3000;
 const REFRESH_MS = 30 * 60 * 1000; // refresh every 30 minutes
@@ -34,7 +35,7 @@ async function fetchFeed(feed) {
     if (Number(res.headers.get('content-length')) > MAX_FEED_BYTES) throw new Error('feed demasiado grande');
     const body = await res.text();
     if (body.length > MAX_FEED_BYTES) throw new Error('feed demasiado grande');
-    const items = parseFeed(body).slice(0, MAX_ITEMS_PER_FEED);
+    const items = parseFeed(body).filter(isEconomicArticle).slice(0, MAX_ITEMS_PER_FEED);
     return {
       ok: true,
       articles: items.map((it) => ({ ...it, country: feed.country, source: feed.source })),
@@ -86,7 +87,7 @@ function apiNews(url) {
   const limit = Math.min(Number(url.searchParams.get('limit')) || 60, 200);
   const since = days ? Date.now() - days * 86400000 : 0;
 
-  let list = state.articles;
+  let list = state.articles.filter(isEconomicArticle);
   if (country && country !== 'ALL') list = list.filter((a) => a.country === country);
   if (since) list = list.filter((a) => a.date && Date.parse(a.date) >= since);
   if (q) list = list.filter((a) => (a.title + ' ' + a.summary).toLowerCase().includes(q));
@@ -96,7 +97,7 @@ function apiNews(url) {
 
 function apiCountries() {
   const counts = {};
-  for (const a of state.articles) counts[a.country] = (counts[a.country] || 0) + 1;
+  for (const a of state.articles.filter(isEconomicArticle)) counts[a.country] = (counts[a.country] || 0) + 1;
   return Object.entries(COUNTRIES)
     .map(([code, c]) => ({ code, name: c.name, flag: c.flag, count: counts[code] || 0 }))
     .filter((c) => c.count > 0);
